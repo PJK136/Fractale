@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FMainWindows</class>
+ <widget class="QMainWindow" name="FMainWindows">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fractale</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="ressource.qrc">
+    <normaloff>:/icon/256x256.ico</normaloff>:/icon/256x256.ico</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>32</width>
+    <height>32</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="zoneCentrale">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QFrame" name="frame_2">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="2">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="1">
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="margin">
+             <number>1</number>
+            </property>
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="FractaleWidget" name="rendu">
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="2">
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="3" rowspan="2">
+          <widget class="QScrollBar" name="yScrollBar">
+           <property name="minimum">
+            <number>-350</number>
+           </property>
+           <property name="maximum">
+            <number>150</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QScrollBar" name="xScrollBar">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>350</number>
+           </property>
+           <property name="singleStep">
+            <number>1</number>
+           </property>
+           <property name="pageStep">
+            <number>10</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <widget class="Line" name="line">
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="midLineWidth">
+          <number>0</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QFormLayout" name="formLayout">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
+         <property name="labelAlignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="formAlignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Nombre de coté :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="nombre_de_cote">
+           <property name="minimum">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Alterner le
+nombre de coté :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QCheckBox" name="alterner_nb_cote">
+             <property name="text">
+              <string>Avec :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="nombre_de_cote_alterne">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimum">
+              <number>3</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Nombre de
+polygone/coté :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="nombre_de_poly_cote">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Alterner le nombre
+de polygone/coté :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QCheckBox" name="alterner_poly_cote">
+             <property name="text">
+              <string>Avec :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="nombre_de_poly_cote_alterne">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Division de
+la longueur :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QCheckBox" name="fixer_division">
+             <property name="text">
+              <string>Fixer :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="division">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimum">
+              <number>3</number>
+             </property>
+             <property name="singleStep">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_alterner_nb_div">
+           <property name="text">
+            <string>Alterner la division
+de la longeur :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QCheckBox" name="alterner_division">
+             <property name="text">
+              <string>Avec :</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="division_alterne">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimum">
+              <number>3</number>
+             </property>
+             <property name="singleStep">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Etape :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QSpinBox" name="limite_etape"/>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="mode_infini">
+             <property name="text">
+              <string>Infini</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Zoom :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QDoubleSpinBox" name="displayZoom">
+           <property name="suffix">
+            <string/>
+           </property>
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="minimum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>100000000.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>100.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>350.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Couleurs :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QComboBox" name="couleur">
+           <item>
+            <property name="text">
+             <string>Sans</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Coté</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Surface</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Afficher toutes
+les étapes :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+            <widget class="QCheckBox" name="afficher_toutes_les_etapes">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Limite Coté</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="1">
+          <widget class="QSpinBox" name="limite_cote">
+           <property name="minimum">
+            <number>-1</number>
+           </property>
+           <property name="maximum">
+            <number>10000000</number>
+           </property>
+           <property name="singleStep">
+            <number>10000</number>
+           </property>
+           <property name="value">
+            <number>50000</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionEnregistrer"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuParam_tres">
+    <property name="title">
+     <string>Paramètres</string>
+    </property>
+    <addaction name="actionCouleur_du_trait"/>
+    <addaction name="actionCouleur_de_la_sufrace"/>
+    <addaction name="separator"/>
+    <addaction name="actionAntialiase"/>
+    <addaction name="actionAutomatique"/>
+    <addaction name="separator"/>
+    <addaction name="actionRemiseAZero"/>
+    <addaction name="actionDebug_Mode"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>?</string>
+    </property>
+    <addaction name="actionAPropos"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuParam_tres"/>
+   <addaction name="menu"/>
+  </widget>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer">
+   <property name="text">
+    <string>Enregistrer</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionAPropos">
+   <property name="text">
+    <string>À propos de Fractale ...</string>
+   </property>
+  </action>
+  <action name="actionAntialiase">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Antialiase</string>
+   </property>
+  </action>
+  <action name="actionAutomatique">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Automatique</string>
+   </property>
+   <property name="toolTip">
+    <string>Augmente et diminue l'étape automatiquement en boucle</string>
+   </property>
+  </action>
+  <action name="actionRemiseAZero">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Remise à 0 l'étape à chaque fois</string>
+   </property>
+   <property name="toolTip">
+    <string>Remettre à 0 l'étape à chaque modification des paramètres de la Fractale</string>
+   </property>
+  </action>
+  <action name="actionCouleur_du_trait">
+   <property name="text">
+    <string>Couleur du trait ...</string>
+   </property>
+  </action>
+  <action name="actionCouleur_de_la_sufrace">
+   <property name="text">
+    <string>Couleur de la surface ...</string>
+   </property>
+  </action>
+  <action name="actionDebug_Mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Debug Mode</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>FractaleWidget</class>
+   <extends>QFrame</extends>
+   <header>fractalewidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>posXChanged(int)</signal>
+    <signal>posYChanged(int)</signal>
+    <signal>zoomChanged(double)</signal>
+    <signal>intervalXChanged(bool,int,int,int)</signal>
+    <signal>intervalYChanged(bool,int,int,int)</signal>
+    <slot>setEtape(int)</slot>
+    <slot>setEtapesAuto(bool)</slot>
+    <slot>updatePosX(int)</slot>
+    <slot>updatePosY(int)</slot>
+    <slot>updateInterval()</slot>
+    <slot>updateZoom(double)</slot>
+    <slot>setEtapeMax(int)</slot>
+    <slot>setCouleur(int)</slot>
+    <slot>setAfficherToutesLesEtapes(bool)</slot>
+    <slot>setAntialiase(bool)</slot>
+    <slot>setFilling(int)</slot>
+    <slot>setEpaisseur(int)</slot>
+    <slot>askColorPen()</slot>
+    <slot>askColorBrush()</slot>
+    <slot>setDebugMode(bool)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>nombre_de_cote</tabstop>
+  <tabstop>alterner_nb_cote</tabstop>
+  <tabstop>nombre_de_cote_alterne</tabstop>
+  <tabstop>nombre_de_poly_cote</tabstop>
+  <tabstop>alterner_poly_cote</tabstop>
+  <tabstop>nombre_de_poly_cote_alterne</tabstop>
+  <tabstop>fixer_division</tabstop>
+  <tabstop>division</tabstop>
+  <tabstop>alterner_division</tabstop>
+  <tabstop>division_alterne</tabstop>
+  <tabstop>displayZoom</tabstop>
+  <tabstop>couleur</tabstop>
+  <tabstop>afficher_toutes_les_etapes</tabstop>
+  <tabstop>limite_cote</tabstop>
+ </tabstops>
+ <resources>
+  <include location="ressource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionAutomatique</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>FMainWindows</receiver>
+   <slot>modePresentation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAPropos</sender>
+   <signal>triggered()</signal>
+   <receiver>FMainWindows</receiver>
+   <slot>aPropos()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEnregistrer</sender>
+   <signal>triggered()</signal>
+   <receiver>FMainWindows</receiver>
+   <slot>saveFractale()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>displayZoom</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>rendu</receiver>
+   <slot>updateZoom(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>279</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>666</x>
+     <y>284</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rendu</sender>
+   <signal>zoomChanged(double)</signal>
+   <receiver>displayZoom</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>438</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rendu</sender>
+   <signal>posYChanged(int)</signal>
+   <receiver>yScrollBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>663</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>696</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rendu</sender>
+   <signal>posXChanged(int)</signal>
+   <receiver>xScrollBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>663</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>676</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alterner_poly_cote</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>nombre_de_poly_cote_alterne</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yScrollBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>rendu</receiver>
+   <slot>updatePosY(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>696</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>656</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xScrollBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>rendu</receiver>
+   <slot>updatePosX(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>676</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>615</x>
+     <y>406</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>afficher_toutes_les_etapes</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>rendu</receiver>
+   <slot>setAfficherToutesLesEtapes(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>431</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>couleur</sender>
+   <signal>activated(int)</signal>
+   <receiver>rendu</receiver>
+   <slot>setCouleur(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>307</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>305</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rendu</sender>
+   <signal>intervalXChanged(bool,int,int,int)</signal>
+   <receiver>FMainWindows</receiver>
+   <slot>setIntervalXScrollBar(bool,int,int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>666</x>
+     <y>458</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCouleur_de_la_sufrace</sender>
+   <signal>triggered()</signal>
+   <receiver>rendu</receiver>
+   <slot>askColorBrush()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>467</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCouleur_du_trait</sender>
+   <signal>triggered()</signal>
+   <receiver>rendu</receiver>
+   <slot>askColorPen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>467</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAntialiase</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>rendu</receiver>
+   <slot>setAntialiase(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>467</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alterner_nb_cote</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>nombre_de_cote_alterne</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rendu</sender>
+   <signal>intervalYChanged(bool,int,int,int)</signal>
+   <receiver>FMainWindows</receiver>
+   <slot>setIntervalYScrollBar(bool,int,int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>495</x>
+     <y>259</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>alterner_division</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>division_alterne</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>213</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>216</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fixer_division</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>division_alterne</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>237</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fixer_division</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>division</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDebug_Mode</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>rendu</receiver>
+   <slot>setDebugMode(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>480</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fixer_division</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_alterner_nb_div</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>176</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mode_infini</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>limite_etape</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>180</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fixer_division</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>alterner_division</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>181</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>setIntervalXScrollBar(bool,int,int,int)</slot>
+  <slot>setIntervalYScrollBar(bool,int,int,int)</slot>
+  <slot>modePresentation()</slot>
+  <slot>aPropos()</slot>
+  <slot>saveFractale()</slot>
+ </slots>
+</ui>
