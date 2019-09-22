@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Fractale
+Comment=Modélisation 2D de la fractale de Von Koch avec différentes variantes
+Exec=Fractale
+Icon=Fractale
+Categories=Science;

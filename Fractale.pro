@@ -11,9 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Fractale
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
-        fmainwindows.cpp \
+    fmainwindows.cpp \
     fractalewidget.cpp \
     cote.cpp \
     fractale.cpp
@@ -25,5 +24,21 @@ HEADERS  += fmainwindows.h \
 
 FORMS    += fmainwindows.ui
 
-RESOURCES += \
-    ressource.qrc
+RESOURCES += ressource.qrc
+
+linux-g++ {
+    isEmpty(PREFIX) {
+        PREFIX = /usr
+    }
+    target.path = $$PREFIX/bin
+
+    desktop.path = $$PREFIX/share/applications/
+    desktop.files += Fractale.desktop
+    icon512.path = $$PREFIX/share/icons/hicolor/512x512/apps
+    icon512.files += icon/Fractale.png
+
+    INSTALLS += icon512
+    INSTALLS += desktop
+    INSTALLS += target
+}
+
