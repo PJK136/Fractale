@@ -8,11 +8,11 @@ before_install:
     - sudo apt-get update -qq
 
 install:
-    - sudo apt-get -y install qt512base libgl1-mesa-dev
+    - sudo apt-get -y install qt512-meta-minimal libgl1-mesa-dev
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
-  - qmake-qt5 CONFIG+=release PREFIX=/usr
+  - qmake CONFIG+=release PREFIX=/usr
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir -j$(nproc) install ; find appdir/
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
