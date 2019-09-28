@@ -36,7 +36,10 @@ linux-g++ {
     desktop.files += Fractale.desktop
     icon512.path = $$PREFIX/share/icons/hicolor/512x512/apps
     icon512.files += icon/Fractale.png
+    appdata.path = $$PREFIX/share/metainfo
+    appdata.files += Fractale.appdata.xml
 
+    INSTALLS += appdata
     INSTALLS += icon512
     INSTALLS += desktop
     INSTALLS += target
